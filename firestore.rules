@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owns(uid) { return request.auth != null && request.auth.uid == uid; }
+    function language(value) { return value in ['en','hi','or']; }
+    function expiry(value) {
+      return value is timestamp
+        && value >= request.time + duration.value(90, 'd') - duration.value(5, 'm')
+        && value <= request.time + duration.value(90, 'd') + duration.value(5, 'm');
+    }
+    function result(value, id) {
+      return value is map && value.keys().hasAll(['taskId','outcome','difficulty','comment'])
+        && value.keys().hasOnly(['taskId','outcome','difficulty','comment'])
+        && value.taskId == id && value.outcome in ['completed','not-completed','skipped']
+        && value.comment is string && value.comment.size() <= 2000
+        && ((value.outcome == 'skipped' && value.difficulty == null)
+          || (value.outcome != 'skipped' && value.difficulty is int && value.difficulty >= 1 && value.difficulty <= 5));
+    }
+    function validTest(data, uid) {
+      return data.keys().hasAll(['owner','studyVersion','language','mode','status','results','createdAt','updatedAt','expiresAt'])
+        && data.keys().hasOnly(['owner','studyVersion','language','mode','status','results','createdAt','updatedAt','expiresAt'])
+        && data.owner == uid && data.studyVersion == 'ncfe-2026-01' && language(data.language)
+        && data.mode in ['independent','facilitated'] && data.results is list
+        && data.createdAt is timestamp && data.updatedAt == request.time && expiry(data.expiresAt);
+    }
+    match /research/{uid}/tests/{id} {
+      allow read, delete: if owns(uid);
+      allow create: if owns(uid) && validTest(request.resource.data,uid)
+        && request.resource.data.status == 'started' && request.resource.data.results.size() == 0
+        && request.resource.data.createdAt == request.time;
+      allow update: if owns(uid) && validTest(request.resource.data,uid)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.mode == resource.data.mode
+        && request.resource.data.results.size() == 4
+        && result(request.resource.data.results[0],'language')
+        && result(request.resource.data.results[1],'bank-accounts')
+        && result(request.resource.data.results[2],'fetp-registration')
+        && result(request.resource.data.results[3],'non-voice-support')
+        && ((request.resource.data.status == 'all-skipped'
+          && request.resource.data.results[0].outcome == 'skipped'
+          && request.resource.data.results[1].outcome == 'skipped'
+          && request.resource.data.results[2].outcome == 'skipped'
+          && request.resource.data.results[3].outcome == 'skipped')
+        || (request.resource.data.status == 'completed'
+          && (request.resource.data.results[0].outcome != 'skipped'
+          || request.resource.data.results[1].outcome != 'skipped'
+          || request.resource.data.results[2].outcome != 'skipped'
+          || request.resource.data.results[3].outcome != 'skipped')));
+    }
+    match /research/{uid}/feedback/{id} {
+      allow read, delete: if owns(uid);
+      allow create: if owns(uid)
+        && request.resource.data.keys().hasAll(['owner','studyVersion','rating','category','language','comment','createdAt','expiresAt'])
+        && request.resource.data.keys().hasOnly(['owner','studyVersion','rating','category','language','comment','createdAt','expiresAt'])
+        && request.resource.data.owner == uid && request.resource.data.studyVersion == 'ncfe-2026-01'
+        && request.resource.data.rating is int && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && request.resource.data.category in ['Onboarding and language selection','Home','Learning and videos','Financial literacy programmes','FinDisha and Help','Overall experience']
+        && language(request.resource.data.language) && request.resource.data.comment is string
+        && request.resource.data.comment.size() <= 2000 && request.resource.data.createdAt == request.time
+        && expiry(request.resource.data.expiresAt);
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

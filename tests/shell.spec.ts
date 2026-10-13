@@ -24,3 +24,10 @@ test('capture shell and onboarding phase evidence',async({page})=>{
  await page.goto('?view=app#/home');await page.screenshot({path:'docs/screenshots/phase-2-shell.png'});
  await page.setViewportSize({width:1024,height:1000});await page.goto('#/onboarding');await page.frameLocator('iframe').getByRole('heading',{name:'Choose your language'}).waitFor();await page.screenshot({path:'docs/screenshots/phase-2-desktop-wrapper.png'});
 });
+test('desktop wrapper feedback, Back and Restart control the phone prototype',async({page})=>{
+ await page.setViewportSize({width:1024,height:1000});await page.goto('#/home');
+ const app=page.frameLocator('iframe');await app.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();
+ await page.getByRole('button',{name:'Back',exact:true}).click();await expect(app.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Feedback',exact:true}).click();await expect(app.getByRole('dialog')).toBeVisible();await app.getByRole('button',{name:'Close dialog'}).click();
+ await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(app.getByRole('heading',{name:'Choose your language'})).toBeVisible();
+});

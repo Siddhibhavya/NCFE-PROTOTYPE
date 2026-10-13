@@ -1,6 +1,47 @@
 {
-  "name": "ncfe-usability-prototype", "private": true, "version": "0.1.0", "type": "module",
-  "scripts": { "dev": "vite --host 127.0.0.1", "build": "tsc -b && vite build", "preview": "vite preview --host 127.0.0.1", "typecheck": "tsc -b", "lint": "eslint .", "test": "vitest run", "test:e2e": "playwright test", "test:rules": "firebase emulators:exec --only firestore \"vitest run --config vitest.rules.config.ts\"" },
-  "dependencies": { "react": "latest", "react-dom": "latest", "react-router-dom": "latest", "firebase": "latest", "@fontsource/noto-sans": "latest", "@fontsource/noto-sans-devanagari": "latest", "@fontsource/anek-odia": "latest" },
-  "devDependencies": { "typescript": "latest", "vite": "latest", "@vitejs/plugin-react": "latest", "vitest": "latest", "@playwright/test": "latest", "@types/react": "latest", "@types/react-dom": "latest", "@types/node": "latest", "eslint": "latest", "@eslint/js": "latest", "typescript-eslint": "latest", "eslint-plugin-react-hooks": "latest", "globals": "latest", "@firebase/rules-unit-testing": "latest", "firebase-tools": "latest" }
+  "name": "ncfe-usability-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:rules": "firebase emulators:exec --only firestore --project demo-ncfe \"vitest run --config vitest.rules.config.ts\"",
+    "check:secrets": "node scripts/check-repository-secrets.mjs"
+  },
+  "dependencies": {
+    "@fontsource/anek-odia": "latest",
+    "@fontsource/noto-sans": "latest",
+    "@fontsource/noto-sans-devanagari": "latest",
+    "firebase": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "latest",
+    "@firebase/rules-unit-testing": "latest",
+    "@playwright/test": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "firebase-tools": "latest",
+    "globals": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.14.6"
+  }
 }
