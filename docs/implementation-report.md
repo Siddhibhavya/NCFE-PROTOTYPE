@@ -14,7 +14,7 @@ Original Figma screens and component tokens are the source of visual styling. Ca
 | 6 | Responsive feedback | [Feedback](screenshots/phase-6-feedback.png); Frame 224 cream/yellow/stars/close preserved, approved responsive language/submit additions |
 | 7 | Optional Firebase adapter, consent, four tasks, skips, outcomes, difficulty, modes, withdrawal, rules and aggregate logic | [Study](screenshots/phase-7-study.png); demonstrations remain available without Firebase |
 | Language update | Hindi/Odia draft text and multilingual search; programme/policy names preserved | [Hindi](screenshots/translated-hi.png), [Odia](screenshots/translated-or.png); user requested translation, draft review notice shown |
-| 8 | GitHub Pages workflow | Deployment is verified separately in the GitHub Actions run; do not infer live availability from a local build |
+| 8 | GitHub Pages workflow and published demonstration | [Successful validation and deployment run](https://github.com/Siddhibhavya/NCFE-PROTOTYPE/actions/runs/38440708140); mobile browser onboarding, navigation and demonstration feedback verified |
 | 9 | Lint, strict types, build, Vitest, browser and database-rule checks; documented manual accessibility checklist | [Accessibility checks and limitations](accessibility-testing.md) |
 
 ## Intentional prototype limitations
@@ -28,3 +28,5 @@ Original Figma screens and component tokens are the source of visual styling. Ca
 - Physical-device TalkBack/VoiceOver, manual scaling and full human accessibility testing are pending. Automated checks do not establish compliance.
 
 Only this prototype repository is changed. Portfolio integration remains documentation.
+
+Local verification: lint, strict types, build, 7 Vitest checks, 14 Playwright checks (including automated accessibility) and 4 Firestore access-control checks passed. Production dependency audit reported no known vulnerabilities. Physical-device/manual checks remain pending as listed above.

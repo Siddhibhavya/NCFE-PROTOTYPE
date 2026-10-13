@@ -16,6 +16,7 @@ test('language confirmation, cancel, navigation and original fixed shell',async(
  await page.getByRole('searchbox',{name:'Search topics'}).fill('bank accounts');
  await page.getByRole('link',{name:/Banking: Financial inclusion/}).click();
  await expect(page.getByRole('heading',{name:'Banking: Financial inclusion',exact:true})).toBeVisible();
+ await expect(page.getByRole('navigation').getByRole('link',{name:'Learn',exact:true})).toHaveAttribute('aria-current','page');
  await page.getByRole('button',{name:'Go back'}).click();
  await expect(page.getByRole('searchbox',{name:'Search topics'})).toHaveValue('bank accounts');
 });
