@@ -2,12 +2,14 @@ import {test,expect} from '@playwright/test';
 test('language confirmation, cancel, navigation and original fixed shell',async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.goto('?view=app#/onboarding');
+ await expect(page.getByRole('group',{name:'Available languages'}).getByRole('button')).toHaveCount(24);
+ await expect(page.getByRole('group',{name:'Available languages'}).locator('button:disabled')).toHaveCount(21);
  await page.getByRole('button',{name:'हिन्दी Hindi'}).click();
  await expect(page.getByRole('dialog')).toBeVisible();
- await page.getByRole('button',{name:'Cancel',exact:true}).click();
+ await page.getByRole('button',{name:'No',exact:true}).click();
  await expect(page.getByRole('button',{name:'हिन्दी Hindi'})).toHaveAttribute('aria-pressed','true');
  await page.getByRole('button',{name:'English Default'}).click();
- await page.getByRole('button',{name:'Confirm',exact:true}).click();
+ await page.getByRole('button',{name:'Yes',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
  await expect(page.locator('header')).toHaveCSS('height','56.4531px');
  await page.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();
@@ -27,6 +29,9 @@ test('capture shell and onboarding phase evidence',async({page})=>{
 });
 test('desktop wrapper feedback, Back and Restart control the phone prototype',async({page})=>{
  await page.setViewportSize({width:1024,height:1000});await page.goto('#/home');
+ await expect(page.getByText('Language availability',{exact:true})).toBeVisible();
+ const controlStyles=await page.locator('aside > button').evaluateAll(buttons=>buttons.map(button=>{const style=getComputedStyle(button);return [style.backgroundColor,style.borderRadius,style.height,style.fontSize].join('|');}));
+ expect(new Set(controlStyles).size).toBe(1);
  const app=page.frameLocator('iframe');await app.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();
  await page.getByRole('button',{name:'Back',exact:true}).click();await expect(app.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'Feedback',exact:true}).click();await expect(app.getByRole('dialog')).toBeVisible();await app.getByRole('button',{name:'Close dialog'}).click();

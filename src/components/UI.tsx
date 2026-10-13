@@ -22,11 +22,12 @@ export function ActionLink({ to, children }: {
     to: string;
     children: ReactNode;
 }) { return <Link className={s.primary} to={to}>{children}</Link>; }
-export function Dialog({ title, children, onClose, feedback = false }: {
+export function Dialog({ title, children, onClose, feedback = false, languageConfirmation = false }: {
     title: string;
     children: ReactNode;
     onClose: () => void;
     feedback?: boolean;
+    languageConfirmation?: boolean;
 }) {
     const t = useTranslation();
     const titleId = useId();
@@ -35,6 +36,6 @@ export function Dialog({ title, children, onClose, feedback = false }: {
     closeRef.current = onClose;
     useEffect(() => { const dialog = ref.current; if (!dialog)
         return; const previous = document.activeElement as HTMLElement | null; dialog.showModal(); return () => { dialog.close(); previous?.focus(); }; }, []);
-    return <dialog ref={ref} className={feedback ? s.feedbackDialog : s.dialog} aria-labelledby={titleId} onCancel={event => { event.preventDefault(); closeRef.current(); }}><div className={s.dialogInner}><button className={s.close} aria-label={t("Close dialog")} onClick={onClose}>{feedback ? <img src={asset('295-16869', 'imgVector')} alt={t("")}/> : '×'}</button><h2 id={titleId}>{title}</h2>{children}</div></dialog>;
+    return <dialog ref={ref} className={`${feedback ? s.feedbackDialog : s.dialog} ${languageConfirmation ? s.languageConfirmation : ''}`} aria-labelledby={titleId} onCancel={event => { event.preventDefault(); closeRef.current(); }}><div className={s.dialogInner}>{!languageConfirmation && <button className={s.close} aria-label={t("Close dialog")} onClick={onClose}>{feedback ? <img src={asset('295-16869', 'imgVector')} alt={t("")}/> : '×'}</button>}<h2 id={titleId}>{title}</h2>{children}</div></dialog>;
 }
 export function PrototypeNote() { const t = useTranslation(); return <p className={s.prototypeNote}>{t("Independent academic prototype \u00B7 Not an official NCFE application. ")}<Link to="/study">{t("Usability test")}</Link>{t(" \u00B7 ")}<Link to="/privacy">{t("Privacy")}</Link></p>; }

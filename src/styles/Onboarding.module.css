@@ -1,2 +1,23 @@
 .onboarding{padding:18px 16px 30px;max-width:720px;margin:0 auto}.identity{display:flex;gap:6px;align-items:center;padding:0 9px}.identity>span{width:52px;height:52px}.identity p{font-size:17px;line-height:23px;font-weight:500;color:#0d458f;margin:0}.onboarding h1{font-size:34px;line-height:42px;font-weight:500;letter-spacing:.25px;text-align:center;margin:12px 0 10px}.onboarding label{display:block;font-size:14px;line-height:20px;margin-bottom:4px}.onboarding input{border:1px solid #e0e0e0;background:var(--card);color:var(--text);border-radius:8px;width:100%;height:40px;padding:8px 12px}.languages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin:20px 0}.tile{min-height:66px;border:2px solid var(--outline);border-radius:12px;box-shadow:0 3px 4px #0004;background:var(--card);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;padding:8px}.tile strong{font-size:16px;line-height:24px;font-weight:600}.tile span{font-size:14px;line-height:22px;color:var(--muted)}.selected{background:#1565c0;color:white;border-color:#0c0231;box-shadow:none}.selected span{color:white}.hindi{font-family:'Noto Sans Devanagari',sans-serif}.odia{font-family:'Anek Odia',sans-serif}.onboarding:global(.dark) .identity p{color:#90caf9}@media(max-width:350px){.onboarding h1{font-size:28px;line-height:36px}.identity p{font-size:15px}.languages{gap:8px}}@media(min-width:768px){.onboarding{padding:24px 28px}.onboarding h1{text-align:left}.languages{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .identity{padding-right:42px}
+.searchField{display:flex;align-items:center;height:40px;border:1px solid #e0e0e0;border-radius:8px;background:var(--card);overflow:hidden;padding-left:12px;gap:8px}
+.onboarding label{display:flex;align-items:center;gap:4px}
+.onboarding label img{width:14px;height:14px}
+.searchField>img{width:18px;height:18px;flex:none}
+.searchField input{border:0;border-radius:0;min-width:0;flex:1;padding:8px 0;outline-offset:-3px}
+.searchField button{border:0;background:transparent;display:grid;place-items:center;width:24px;flex:none;padding:0;height:40px}
+.searchField button img{width:18px;height:18px}
+.searchField button:last-child{background:var(--primary);width:40px}
+.searchField button:last-child img{width:24px;height:24px}
+.tile:disabled{opacity:1;box-shadow:0 3px 4px #0004;color:var(--muted)}
+.onboarding h1{color:var(--primary-dark)}
+.tile strong:lang(as),.tile strong:lang(bn),.tile strong:lang(mni){font-family:'Noto Sans Bengali',sans-serif}
+.tile strong:lang(bho),.tile strong:lang(brx),.tile strong:lang(doi),.tile strong:lang(kok),.tile strong:lang(mai),.tile strong:lang(mr),.tile strong:lang(ne),.tile strong:lang(raj),.tile strong:lang(sat){font-family:'Noto Sans Devanagari',sans-serif}
+.tile strong:lang(gu){font-family:'Noto Sans Gujarati',sans-serif}
+.tile strong:lang(kn){font-family:'Noto Sans Kannada',sans-serif}
+.tile strong:lang(ml){font-family:'Noto Sans Malayalam',sans-serif}
+.tile strong:lang(pa){font-family:'Noto Sans Gurmukhi',sans-serif}
+.tile strong:lang(ta){font-family:'Noto Sans Tamil',sans-serif}
+.tile strong:lang(te){font-family:'Noto Sans Telugu',sans-serif}
+.tile strong:lang(ur),.tile strong:lang(ks),.tile strong:lang(sd){font-family:'Noto Nastaliq Urdu',sans-serif}
+@media(min-width:768px){.languages{grid-template-columns:repeat(2,minmax(0,1fr))}}

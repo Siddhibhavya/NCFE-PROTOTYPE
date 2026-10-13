@@ -17,7 +17,7 @@ test('guided testing survives navigation and supports skips without Firebase',as
 });
 for(const language of ['hi','or'] as const){
  test(`${language}: selected language changes interface, topic content and search; preserves programme/policy names`,async({page})=>{
-  await page.goto('?view=app#/onboarding');await page.getByRole('button',{name:language==='hi'?'हिन्दी Hindi':'ଓଡ଼ିଆ Odia'}).click();await page.getByRole('button',{name:'Confirm',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('lang',language);
+  await page.goto('?view=app#/onboarding');await page.getByRole('button',{name:language==='hi'?'हिन्दी Hindi':'ଓଡ଼ିଆ Odia'}).click();await page.getByRole('button',{name:'Yes',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('lang',language);
   await page.getByRole('navigation').getByRole('link',{name:language==='hi'?'सीखें':'ଶିଖନ୍ତୁ',exact:true}).click();await expect(page.getByRole('heading',{name:language==='hi'?'पाठ्यपुस्तकें':'ପାଠ୍ୟପୁସ୍ତକ'})).toBeVisible();
   await page.locator('header a[href="#/learn/search"]').click();await page.getByRole('searchbox').fill(language==='hi'?'बैंक खाते':'ଖାତା');await page.getByRole('link',{name:language==='hi'?/बैंकिंग: वित्तीय समावेशन/:/ବ୍ୟାଙ୍କିଂ: ଆର୍ଥିକ ଅନ୍ତର୍ଭୁକ୍ତି/}).click();await expect(page.getByText(language==='hi'?/वित्तीय समावेशन का अर्थ/:/ଆର୍ଥିକ ଅନ୍ତର୍ଭୁକ୍ତିର ଅର୍ଥ/)).toBeVisible();await page.screenshot({path:`docs/screenshots/translated-${language}.png`});
   await page.locator('header a[href="#/home"]').click();await page.getByRole('link',{name:'Pradhan Mantri Jan Dhan Yojana',exact:true}).click();await expect(page.getByRole('heading',{name:'Pradhan Mantri Jan Dhan Yojana',exact:true})).toBeVisible();
