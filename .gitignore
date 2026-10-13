@@ -6,3 +6,6 @@ dist/
 test-results/
 playwright-report/
 *.log
+*.tsbuildinfo
+.firebase/
+firebase-debug.log

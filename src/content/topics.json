@@ -1,0 +1,47 @@
+[
+  {
+    "id": "money-transactions",
+    "node": "284:7542",
+    "title": "Money: Managing transactions",
+    "subtitle": "Understanding everyday money transactions",
+    "summary": "Learn how to recognise money coming in and going out, record everyday payments, and check transaction details. This introductory overview encourages keeping simple records and reviewing balances after making payments.",
+    "thumbnail": "imgRectangle418",
+    "posterScreen": "284-7542"
+  },
+  {
+    "id": "monthly-budget",
+    "node": "284:7630",
+    "title": "Planning: Make a monthly budget",
+    "subtitle": "Planning a monthly budget",
+    "summary": "A budget helps organise income, essential expenses, savings, and discretionary spending. Start with what you earn or receive, list regular expenses, and review your plan as your needs change.",
+    "thumbnail": "imgRectangle419",
+    "posterScreen": "284-7630"
+  },
+  {
+    "id": "financial-inclusion",
+    "node": "284:7718",
+    "title": "Banking: Financial inclusion",
+    "subtitle": "Banking and financial inclusion",
+    "summary": "Financial inclusion means making useful financial services easier for people to access. Explore basic bank accounts, deposits, payments, and why understanding account terms matters.",
+    "thumbnail": "imgRectangle420",
+    "posterScreen": "284-7718"
+  },
+  {
+    "id": "insurance-safety-nets",
+    "node": "284:7806",
+    "title": "Insurance: Safety nets",
+    "subtitle": "Insurance and financial safety nets",
+    "summary": "Insurance can help protect against certain financial risks. Learn about premiums, coverage, exclusions, and why it is important to compare policies and read the terms before choosing one.",
+    "thumbnail": "imgRectangle421",
+    "posterScreen": "284-7806"
+  },
+  {
+    "id": "pmjdy",
+    "node": "21:5247",
+    "title": "Pradhan Mantri Jan Dhan Yojana",
+    "subtitle": "Financial inclusion · Banking · English",
+    "summary": "PMJDY helps people without a bank account access essential banking services. It offers a basic savings account with no minimum balance requirement, interest on deposits and a RuPay debit card. Eligible account holders may receive accident insurance benefits and an overdraft facility of up to ₹10,000. The scheme also supports direct transfer of government benefits into bank accounts.",
+    "thumbnail": "imgRectangle483",
+    "posterScreen": "21-5247"
+  }
+]
