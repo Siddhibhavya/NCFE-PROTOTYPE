@@ -1,0 +1,79 @@
+[
+  {
+    "id": "fetp",
+    "node": "21:5182",
+    "hero": "imgNcfeFetpHero1",
+    "copy": [
+      "FETP helps school teachers build financial knowledge and bring practical money lessons into their classrooms.",
+      "Teachers and educational institutions working with students in Classes VI to X.",
+      "✓ Key concepts of financial literacy",
+      "✓ Classroom activities and teaching methods",
+      "✓ Using NCFE learning resources",
+      "Schools can request teacher training through NCFE. Successful trainees may qualify for certification."
+    ]
+  },
+  {
+    "id": "mssp",
+    "node": "21:5196",
+    "hero": "imgNcfeFepaHero1",
+    "copy": [
+      "MSSP helps schools introduce financial literacy into everyday education. It gives students the knowledge and skills to make informed money decisions early in life.",
+      "Students in Classes VI to X and schools introducing financial education.",
+      "✓ Basics of money and saving",
+      "✓ Planning and responsible spending",
+      "✓ Digital payments and financial safety",
+      "Schools can request the programme through NCFE and introduce financial education with teacher support.",
+      "Money Smart School Programme"
+    ]
+  },
+  {
+    "id": "fepa",
+    "node": "21:5189",
+    "hero": "imgNcfeMsspHero1",
+    "copy": [
+      "FEPA brings practical financial education to adults, including communities with limited access to formal financial services.",
+      "Rural communities, self-help groups, women, farmers and other adult learners.",
+      "✓ Managing daily income and expenses",
+      "✓ Using formal financial services",
+      "✓ Digital payments and fraud prevention",
+      "Community groups and institutions can request workshops through NCFE.",
+      "Financial Education Programme for Adults"
+    ]
+  },
+  {
+    "id": "fact",
+    "node": "33:5842",
+    "hero": "imgNcfeFactHero1",
+    "copy": [
+      "FACT introduces college students to everyday money decisions and responsible financial choices as they prepare for independent living.",
+      "Students enrolled in colleges and higher education institutions.",
+      "✓ Managing income, expenses and debt",
+      "✓ Understanding insurance and investments",
+      "✓ Using digital financial services safely",
+      "Colleges and institutions can request financial education sessions from NCFE.",
+      "Financial Awareness and Consumer Training"
+    ]
+  },
+  {
+    "id": "nflat",
+    "node": "21:5175",
+    "hero": "imgNcfeNflatHero1",
+    "copy": [
+      "NFLAT is a national-level assessment that helps students test their financial literacy and build responsible money habits.",
+      "School students in Classes VI to XII, registered through their schools.",
+      "✓ Age-appropriate financial literacy questions",
+      "✓ Certificates based on participation and results",
+      "Schools register students through NCFE during the announced registration period.",
+      "National Financial Literacy Assessment Test"
+    ]
+  },
+  {
+    "id": "elms",
+    "node": "21:5144",
+    "hero": "imgRectangle431",
+    "copy": [
+      "NCFE has launched an e-Learning course on basic financial education covering topics from Banking, Securities Markets, Insurance and Pension products. The topics are further subdivided into 20 modules like Money & Transactions, Financial records and Contracts, Managing Income & Expenditure, Long Term Planning, Financial Safety Nets & Insurance, Scams & Frauds etc. The course is for 5 hours with each module of around 15–20 mins.",
+      "The E-learning Course is offered free of charge to all the registered users. This course will give users a solid knowledge base on disseminating financial literacy, which helps to address demand-side barriers as this makes customers informed and enables better financial decision making and ultimately financial wellbeing. The content of the course is being derived from the book Capacity Building for Financial Literacy Programmes (CABFLIP) primarily based on the Core Competencies on Financial Literacy document of OECD-INFE (International Network on Financial Education)."
+    ]
+  }
+]

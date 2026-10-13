@@ -7,6 +7,7 @@ await Promise.all(Array.from({length: 8}, async () => {
   while (next < entries.length) {
     const entry = entries[next++];
     const destination = path.join('public', entry.path);
+    try { if ((await fs.stat(destination)).size > 0) continue; } catch { /* Download missing assets. */ }
     await fs.mkdir(path.dirname(destination), {recursive: true});
     const response = await fetch(entry.url);
     if (!response.ok) throw new Error(`Asset download failed: ${entry.path} (${response.status})`);

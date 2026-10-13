@@ -416,5 +416,11 @@
     "imgWifi": "assets/19-5053/1a19f.svg",
     "imgFrame": "assets/19-5053/0a17c.svg",
     "imgImage22": "assets/19-5053/3d597.svg"
+  },
+  "support": {
+    "phone": "assets/support/9a8f3.svg",
+    "chat": "assets/support/1dfd2.svg",
+    "email": "assets/support/34f92.svg",
+    "walk": "assets/support/697f2.svg"
   }
 }
