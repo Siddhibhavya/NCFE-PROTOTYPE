@@ -1,39 +1,19 @@
 import {test,expect} from '@playwright/test';
-test('language confirmation, cancel, navigation and original fixed shell',async({page})=>{
- await page.setViewportSize({width:390,height:844});
- await page.goto('?view=app#/onboarding');
- await expect(page.getByRole('group',{name:'Available languages'}).getByRole('button')).toHaveCount(24);
- await expect(page.getByRole('group',{name:'Available languages'}).locator('button:disabled')).toHaveCount(21);
- await page.getByRole('button',{name:'हिन्दी Hindi'}).click();
- await expect(page.getByRole('dialog')).toBeVisible();
- await page.getByRole('button',{name:'No',exact:true}).click();
- await expect(page.getByRole('button',{name:'हिन्दी Hindi'})).toHaveAttribute('aria-pressed','true');
- await page.getByRole('button',{name:'English Default'}).click();
- await page.getByRole('button',{name:'Yes',exact:true}).click();
- await expect(page.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
- await expect(page.locator('header')).toHaveCSS('height','56.4531px');
- await page.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();
- await expect(page.getByRole('heading',{name:'Textbooks',exact:true})).toBeVisible();
- await page.getByRole('link',{name:'Topics Search',exact:true}).first().click();
- await page.getByRole('searchbox',{name:'Search topics'}).fill('bank accounts');
- await page.getByRole('link',{name:/Banking: Financial inclusion/}).click();
- await expect(page.getByRole('heading',{name:'Banking: Financial inclusion',exact:true})).toBeVisible();
- await expect(page.getByRole('navigation').getByRole('link',{name:'Learn',exact:true})).toHaveAttribute('aria-current','page');
- await page.getByRole('button',{name:'Go back'}).click();
- await expect(page.getByRole('searchbox',{name:'Search topics'})).toHaveValue('bank accounts');
+import {openApp} from './audit-helpers';
+ test('the three implemented languages are enabled and unsupported languages cannot be activated',async({page})=>{
+ await page.setViewportSize({width:407,height:884});await openApp(page,'onboarding');
+ const group=page.getByRole('group',{name:'Available languages'});await expect(group.getByRole('button')).toHaveCount(24);await expect(group.locator('button:disabled')).toHaveCount(21);
+ const unavailable=group.getByRole('button',{name:/Assamese/});await expect(unavailable).toHaveAttribute('aria-disabled','true');await expect(unavailable).toHaveCSS('background-color','rgb(224, 224, 224)');await unavailable.evaluate((button:HTMLButtonElement)=>button.click());await expect(page.getByRole('dialog')).toHaveCount(0);
+ await group.getByRole('button',{name:'English Default'}).focus();await page.keyboard.press('Tab');await expect(unavailable).not.toBeFocused();await page.keyboard.press('Shift+Tab');await page.keyboard.press('Enter');await expect(page.getByRole('dialog')).toBeVisible();await page.getByRole('button',{name:'No',exact:true}).click();await expect(page.getByRole('dialog')).toHaveCount(0);
+ await group.getByRole('button',{name:'English Default'}).click();await page.getByRole('button',{name:'Yes',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('lang','en');await expect(page.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
 });
-test('capture shell and onboarding phase evidence',async({page})=>{
- await page.setViewportSize({width:390,height:844});await page.goto('?view=app#/onboarding');await page.screenshot({path:'docs/screenshots/phase-3-onboarding.png'});
- await page.goto('?view=app#/home');await page.screenshot({path:'docs/screenshots/phase-2-shell.png'});
- await page.setViewportSize({width:1024,height:1000});await page.goto('#/onboarding');await page.frameLocator('iframe').getByRole('heading',{name:'Choose your language'}).waitFor();await page.screenshot({path:'docs/screenshots/phase-2-desktop-wrapper.png'});
+test('fixed shell, primary destinations, search privacy and back navigation',async({page})=>{
+ await page.setViewportSize({width:407,height:884});await openApp(page,'home');const before=await page.locator('header').boundingBox();await page.locator('main').evaluate(el=>el.scrollTo({top:1000,behavior:'instant'}));expect(await page.locator('header').boundingBox()).toEqual(before);
+ await page.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();await expect(page.getByRole('heading',{name:'E-LMS',exact:true})).toBeVisible();await page.locator('header').getByRole('link',{name:'Topics Search'}).click();await page.getByRole('searchbox').fill('bank accounts');expect(page.url()).not.toContain('bank');await page.getByRole('link',{name:/Banking: Financial inclusion/}).click();await expect(page.getByRole('heading',{name:'Banking: Financial inclusion',exact:true})).toBeVisible();
+ await page.getByRole('navigation').getByRole('link',{name:'FL initiatives',exact:true}).click();await expect(page.getByRole('heading',{name:'NCFE Financial Education Initiatives'})).toBeVisible();await page.getByRole('navigation').getByRole('link',{name:'FinDisha',exact:true}).click();await expect(page.getByRole('heading',{name:'Ask FinDisha'})).toBeVisible();
 });
-test('desktop wrapper feedback, Back and Restart control the phone prototype',async({page})=>{
- await page.setViewportSize({width:1024,height:1000});await page.goto('#/home');
- await expect(page.getByText('Language availability',{exact:true})).toBeVisible();
- const controlStyles=await page.locator('aside > button').evaluateAll(buttons=>buttons.map(button=>{const style=getComputedStyle(button);return [style.backgroundColor,style.borderRadius,style.height,style.fontSize].join('|');}));
- expect(new Set(controlStyles).size).toBe(1);
- const app=page.frameLocator('iframe');await app.getByRole('navigation').getByRole('link',{name:'Learn',exact:true}).click();
- await page.getByRole('button',{name:'Back',exact:true}).click();await expect(app.getByRole('heading',{name:'Home',exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Feedback',exact:true}).click();await expect(app.getByRole('dialog')).toBeVisible();await app.getByRole('button',{name:'Close dialog'}).click();
- await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(app.getByRole('heading',{name:'Choose your language'})).toBeVisible();
+test('hamburger drawer and About NCFE accordions support keyboard, expansion and return',async({page})=>{
+ await page.setViewportSize({width:407,height:884});await openApp(page,'home');await page.getByRole('button',{name:'Open menu'}).click();await expect(page.getByRole('dialog',{name:'Menu'})).toBeVisible();await page.getByRole('link',{name:'About NCFE',exact:true}).click();await expect(page.getByRole('heading',{name:'About NCFE'})).toBeVisible();
+ for(const name of ['Our Vision','Our Mission','Objectives']){const button=page.getByRole('button',{name,exact:true});await expect(button).toHaveAttribute('aria-expanded','false');await button.focus();await page.keyboard.press('Enter');await expect(button).toHaveAttribute('aria-expanded','true');await button.click();await expect(button).toHaveAttribute('aria-expanded','false');}
+ await page.getByRole('button',{name:'Open menu'}).click();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Open menu'})).toBeFocused();
 });

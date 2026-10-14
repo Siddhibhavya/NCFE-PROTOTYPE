@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Workshop",
+    "rows": [
+      {
+        "label": "Workshops",
+        "value": "42,678",
+        "percent": 3.0303030303030303
+      },
+      {
+        "label": "Beneficiaries",
+        "value": "14,79,789",
+        "percent": 100
+      },
+      {
+        "label": "Male participants",
+        "value": "5,17,926",
+        "percent": 34.84848484848485
+      },
+      {
+        "label": "Female participants",
+        "value": "9,61,863",
+        "percent": 64.84848484848484
+      }
+    ],
+    "body": "Workshops bring financial education directly to participants. These figures describe the number of sessions conducted and the people reached. The reported gender breakdown provides another view of participation, but these totals alone cannot tell us how much participants learned."
+  },
+  {
+    "title": "Special Focused Districts",
+    "rows": [
+      {
+        "label": "Workshops",
+        "value": "22,821",
+        "percent": 3.0303030303030303
+      },
+      {
+        "label": "Beneficiaries",
+        "value": "7,76,522",
+        "percent": 100
+      }
+    ],
+    "body": "Focused-district outreach directs financial education activities towards selected districts. The workshop count shows the activity delivered, while beneficiary figures describe the reach. These numbers are useful for understanding coverage, not for assuming equal outcomes across districts."
+  },
+  {
+    "title": "E-LMS",
+    "rows": [
+      {
+        "label": "Registrations",
+        "value": "45,473",
+        "percent": 100
+      }
+    ],
+    "body": "E-LMS extends financial education beyond in-person sessions by offering learning online. Registration totals indicate interest and access to the platform. They do not, by themselves, represent completed lessons or improved financial understanding."
+  },
+  {
+    "title": "NFLAT",
+    "rows": [
+      {
+        "label": "Schools",
+        "value": "3,751",
+        "percent": 1.5151515151515151
+      },
+      {
+        "label": "Students",
+        "value": "4,75,122",
+        "percent": 100
+      }
+    ],
+    "body": "NFLAT brings financial literacy assessment to school students. School and student registrations indicate the scale of participation. A registration count should be distinguished from the number who actually sat for or completed the assessment."
+  },
+  {
+    "title": "MSSP",
+    "rows": [
+      {
+        "label": "Sessions",
+        "value": "60",
+        "percent": 1.5151515151515151
+      },
+      {
+        "label": "Students reached",
+        "value": "38,140",
+        "percent": 100
+      }
+    ],
+    "body": "MSSP focuses on bringing financial education to school students. These figures show the number of programmes conducted and students reached. They indicate programme coverage rather than independently verified learning outcomes."
+  }
+]

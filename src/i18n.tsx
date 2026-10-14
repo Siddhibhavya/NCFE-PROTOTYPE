@@ -12,6 +12,10 @@ export function translate(input:string|undefined,language:Language):string{
  const key=text.trim().replace(/\s+/g,' ');
  const value=translations[key]?.[language==='hi'?0:1];
  if(value)return text.replace(text.trim(),value);
+ // Reuse earlier labels whose arrow is now rendered by the original SVG.
+ const legacyKey=({'View all':'View all →','View':'View →','Online training guidelines program.':'Online training guidelines program. →','FL initiatives':'Initiatives'} as Record<string,string>)[key];
+ const legacyValue=legacyKey?translations[legacyKey]?.[language==='hi'?0:1]:undefined;
+ if(legacyValue)return text.replace(text.trim(),legacyValue.replace(/\s*→\s*$/,''));
  if(key.endsWith(' is required.'))return `${translate(key.slice(0,-13),language)}${language==='hi'?' आवश्यक है।':' ଆବଶ୍ୟକ।'}`;
  const stars=key.match(/^(\d) out of 5 stars$/);if(stars)return language==='hi'?`5 में से ${stars[1]} सितारे`:`5 ମଧ୍ୟରୁ ${stars[1]} ତାରା`;
  return text;

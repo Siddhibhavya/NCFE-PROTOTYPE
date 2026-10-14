@@ -1,5 +1,7 @@
 # Implementation evidence
 
+Historical implementation record. The current [fidelity/privacy audit](fidelity-audit.md) supersedes the language availability, simulated support, backend collection and form-flow descriptions below.
+
 ## Source fidelity
 
 Original Figma screens and component tokens are the source of visual styling. Case-study export is a comparison source; wireframes supplied layout structure only. Original logos, posters, SVG navigation icons, support icons, feedback stars and close icon are downloaded locally. No placeholder icons replace available assets.

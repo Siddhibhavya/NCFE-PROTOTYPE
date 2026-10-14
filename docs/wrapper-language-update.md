@@ -1,5 +1,7 @@
 Desktop presentation update
 
+Historical update. See [the current audit](fidelity-audit.md) for the 407 × 884 viewport, English-only availability and contextual warning behavior.
+
 The outer popup now uses existing NCFE blue tokens: #0d47a1 for its surrounding surface, #1565c0 for its title and borders, #1976d2 for all three controls, and #e3f2fd for its content. Restart, Back and Feedback share one button style. Frame 224 retains its original cream and yellow feedback appearance inside the application.
 
 The desktop device preview uses a 402 × 874 display ratio corresponding to Apple's iPhone 17 specification (1206 × 2622 pixels), with a Dynamic Island, original Figma status icons and home indicator. The preview scales to the available window height; direct mobile links retain the full-screen application without desktop controls or a portfolio Close X. Device chrome is a CSS representation, rather than an Apple product render. Reference: https://www.apple.com/iphone-17/specs/

@@ -1,0 +1,330 @@
+{
+  "fetp": [
+    {
+      "key": "coordinator_first_name",
+      "label": "Coordinator first name",
+      "required": true
+    },
+    {
+      "key": "coordinator_last_name",
+      "label": "Coordinator last name",
+      "required": true
+    },
+    {
+      "key": "coordinator_email",
+      "label": "Coordinator email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "coordinator_mobile",
+      "label": "Coordinator mobile",
+      "required": true,
+      "type": "tel"
+    },
+    {
+      "key": "coordinator_designation",
+      "label": "Coordinator designation",
+      "required": true
+    },
+    {
+      "key": "school_name",
+      "label": "School name",
+      "required": true
+    },
+    {
+      "key": "street_address",
+      "label": "Street address",
+      "required": true
+    },
+    {
+      "key": "address_line_2",
+      "label": "Address line 2",
+      "required": false
+    },
+    {
+      "key": "city",
+      "label": "City",
+      "required": true
+    },
+    {
+      "key": "state_region_province",
+      "label": "State / Region / Province",
+      "required": true
+    },
+    {
+      "key": "postal_zip_code",
+      "label": "Postal / ZIP code",
+      "required": true
+    },
+    {
+      "key": "country",
+      "label": "Country",
+      "required": true
+    },
+    {
+      "key": "principal_first_name",
+      "label": "Principal first name",
+      "required": true
+    },
+    {
+      "key": "principal_last_name",
+      "label": "Principal last name",
+      "required": true
+    },
+    {
+      "key": "principal_email",
+      "label": "Principal email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "principal_phone",
+      "label": "Principal phone",
+      "required": true,
+      "type": "tel"
+    }
+  ],
+  "mssp": [
+    {
+      "key": "school_name",
+      "label": "School name",
+      "required": true
+    },
+    {
+      "key": "school_type",
+      "label": "School type",
+      "required": true
+    },
+    {
+      "key": "state",
+      "label": "State",
+      "required": true
+    },
+    {
+      "key": "district",
+      "label": "District",
+      "required": true
+    },
+    {
+      "key": "contact_person_s_name",
+      "label": "Contact person's name",
+      "required": true
+    },
+    {
+      "key": "school_email",
+      "label": "School email",
+      "required": true,
+      "type": "email"
+    }
+  ],
+  "fepa": [
+    {
+      "key": "organisation_community_group",
+      "label": "Organisation / Community group",
+      "required": true
+    },
+    {
+      "key": "contact_person_s_name",
+      "label": "Contact person's name",
+      "required": true
+    },
+    {
+      "key": "state_and_district",
+      "label": "State and district",
+      "required": true
+    },
+    {
+      "key": "audience_participant_group",
+      "label": "Audience / participant group",
+      "required": true
+    },
+    {
+      "key": "approximate_attendees",
+      "label": "Approximate attendees",
+      "required": true
+    },
+    {
+      "key": "preferred_workshop_dates",
+      "label": "Preferred workshop dates",
+      "required": false
+    }
+  ],
+  "fact": [
+    {
+      "key": "coordinator_first_name",
+      "label": "Coordinator first name",
+      "required": true
+    },
+    {
+      "key": "coordinator_last_name",
+      "label": "Coordinator last name",
+      "required": true
+    },
+    {
+      "key": "coordinator_email",
+      "label": "Coordinator email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "coordinator_mobile",
+      "label": "Coordinator mobile",
+      "required": true,
+      "type": "tel"
+    },
+    {
+      "key": "coordinator_designation",
+      "label": "Coordinator designation",
+      "required": true
+    },
+    {
+      "key": "college_university",
+      "label": "College / University",
+      "required": true
+    },
+    {
+      "key": "street_address",
+      "label": "Street address",
+      "required": true
+    },
+    {
+      "key": "address_line_2",
+      "label": "Address line 2",
+      "required": false
+    },
+    {
+      "key": "city",
+      "label": "City",
+      "required": true
+    },
+    {
+      "key": "state_region_province",
+      "label": "State / Region / Province",
+      "required": true
+    },
+    {
+      "key": "postal_zip_code",
+      "label": "Postal / ZIP code",
+      "required": true
+    },
+    {
+      "key": "country",
+      "label": "Country",
+      "required": true
+    },
+    {
+      "key": "dean_director_first_name",
+      "label": "Dean / Director first name",
+      "required": true
+    },
+    {
+      "key": "dean_director_last_name",
+      "label": "Dean / Director last name",
+      "required": true
+    },
+    {
+      "key": "dean_director_email",
+      "label": "Dean / Director email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "dean_director_phone",
+      "label": "Dean / Director phone",
+      "required": true,
+      "type": "tel"
+    }
+  ],
+  "nflat": [
+    {
+      "key": "coordinator_first_name",
+      "label": "Coordinator first name",
+      "required": true
+    },
+    {
+      "key": "coordinator_last_name",
+      "label": "Coordinator last name",
+      "required": true
+    },
+    {
+      "key": "coordinator_email",
+      "label": "Coordinator email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "coordinator_mobile",
+      "label": "Coordinator mobile",
+      "required": true,
+      "type": "tel"
+    },
+    {
+      "key": "coordinator_designation",
+      "label": "Coordinator designation",
+      "required": true
+    },
+    {
+      "key": "school_name",
+      "label": "School name",
+      "required": true
+    },
+    {
+      "key": "state",
+      "label": "State",
+      "required": true
+    },
+    {
+      "key": "street_address",
+      "label": "Street address",
+      "required": true
+    },
+    {
+      "key": "address_line_2",
+      "label": "Address line 2",
+      "required": false
+    },
+    {
+      "key": "city",
+      "label": "City",
+      "required": true
+    },
+    {
+      "key": "state_region_province",
+      "label": "State / Region / Province",
+      "required": true
+    },
+    {
+      "key": "postal_zip_code",
+      "label": "Postal / ZIP code",
+      "required": true
+    },
+    {
+      "key": "country",
+      "label": "Country",
+      "required": true
+    },
+    {
+      "key": "principal_first_name",
+      "label": "Principal first name",
+      "required": true
+    },
+    {
+      "key": "principal_last_name",
+      "label": "Principal last name",
+      "required": true
+    },
+    {
+      "key": "principal_email",
+      "label": "Principal email",
+      "required": true,
+      "type": "email"
+    },
+    {
+      "key": "principal_phone",
+      "label": "Principal phone",
+      "required": true,
+      "type": "tel"
+    }
+  ]
+}

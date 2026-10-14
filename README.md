@@ -1,5 +1,7 @@
 # NCFE-redesign usability prototype
 
+Current fidelity/privacy audit: [audit report](docs/fidelity-audit.md). English, Hindi and Odia are enabled using the preserved translation resources; see the [language and guided-tour update](docs/language-tour-update.md) for tested behavior and remaining resource gaps. A transient guided tour is offered after first language confirmation, with no onboarding history stored. All six programme forms use source-specific fields and confirmation overlays. Forms, search, chat and feedback do not persist or transmit user input; Firebase initialization is disabled. The device viewport is 407 × 884, with a clean wrapper and contextual warnings. The older implementation notes below describe the previous version and are superseded by the audit report.
+
 Independent academic UX redesign. **This is not an official NCFE application.**
 
 Built from the [original Figma design](https://www.figma.com/design/v6zoZ7R3uvdLqziKptt9wV/NCFE?node-id=0-1), compared with its case-study export and structural wireframes. The portfolio repository is not modified.

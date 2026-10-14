@@ -1,0 +1,234 @@
+{
+  "fetp": [
+    {
+      "title": "About FETP",
+      "body": [
+        "NCFE’s Financial Education Training Programme provides impartial personal-finance education to individuals and organisations, with a particular focus on teachers of Classes VI to X. Built around education and awareness, the programme helps teachers bring financial concepts into school classrooms."
+      ],
+      "minHeight": 241
+    },
+    {
+      "title": "Money Smart Teachers",
+      "body": [
+        "Participants receive training and, on successful completion, can be certified as Money Smart Teachers. These educators are equipped to conduct financial-education classes, encourage students to develop money-management skills, and support financial awareness in their school communities."
+      ],
+      "minHeight": 241
+    },
+    {
+      "title": "Contact NCFE",
+      "body": [
+        "Email: fe_programs@ncfe.org.in",
+        "Phone: +91-022-68265115"
+      ],
+      "minHeight": 131
+    }
+  ],
+  "mssp": [
+    {
+      "title": "About MSSP",
+      "body": [
+        "The Money Smart School Programme (MSSP) is an NCFE initiative supporting unbiased financial education in schools. Built on education and awareness, it encourages schools to integrate financial literacy into everyday learning and equip students with money-management skills."
+      ],
+      "minHeight": 177
+    },
+    {
+      "title": "Salient features",
+      "body": [
+        "Schools voluntarily introduce financial literacy into their curriculum for Classes VI to X. NCFE and CBSE jointly developed five Financial Education Workbooks, designed to connect financial concepts with existing school subjects. Teachers can attend NCFE’s Financial Education Training Programme (FETP), including training arranged at school premises. Certified Money Smart Teachers help deliver lessons. Schools can encourage students to take NFLAT or undertake their own evaluation with NCFE support."
+      ],
+      "minHeight": 287
+    },
+    {
+      "title": "Benefits for schools",
+      "body": [
+        "Participating schools can be certified as Money Smart Schools and receive a certificate and badge for their website and social media. They may receive free teacher training opportunities and support for students preparing for NFLAT. NCFE also describes regulator visits, priority consideration in future initiatives and recognition in Money Smart School campaigns. The programme complements NCFE’s NFLAT student assessment and FETP teacher training."
+      ],
+      "minHeight": 265
+    },
+    {
+      "title": "Contact NCFE",
+      "body": [
+        "Email: fe_programs@ncfe.org.in",
+        "Phone: +91-022-68265115"
+      ],
+      "minHeight": 89
+    }
+  ],
+  "fepa": [
+    {
+      "title": "About FEPA",
+      "body": [
+        "Launched by NCFE in 2019, the Financial Education Programme for Adults (FEPA) supports financial awareness among adults, including farmers, women’s groups, ASHA and Anganwadi workers, self-help groups, employees and trainees. It places emphasis on Special Focused Districts and aims to contribute to a financially aware and empowered India."
+      ],
+      "minHeight": 271
+    },
+    {
+      "title": "Objective",
+      "body": [
+        "To build financial awareness and confidence among financially excluded groups so they can use financial services and products more effectively and participate in the formal financial sector."
+      ],
+      "minHeight": 205
+    },
+    {
+      "title": "Target group",
+      "body": [
+        "Employees of organisations, self-help group members, farmers, rural communities, women’s groups, homemakers, MGNREGA cardholders, personnel from the forces, and other financially excluded adults."
+      ],
+      "minHeight": 205
+    },
+    {
+      "title": "Free of cost",
+      "body": [
+        "FEPA workshops are offered free of charge. Participants are not asked to pay to attend."
+      ],
+      "minHeight": 140
+    },
+    {
+      "title": "Trainers",
+      "body": [
+        "NCFE has a network of experienced and certified Financial Education Trainers who conduct FEPA workshops across India."
+      ],
+      "minHeight": 161
+    },
+    {
+      "title": "Learning content",
+      "body": [
+        "Income, expenses and budgeting; savings; banking; credit and debt management; digital transactions; insurance; investment; retirement and pensions; government financial-inclusion schemes; protection from fraud, Ponzi schemes and unregistered investment advisers; and grievance redressal."
+      ],
+      "minHeight": 249
+    },
+    {
+      "title": "Contact",
+      "body": [
+        "Email: fepa@ncfe.org.in",
+        "Phone: +91-022-68265115"
+      ],
+      "minHeight": 140
+    }
+  ],
+  "fact": [
+    {
+      "title": "About FACT",
+      "body": [
+        "Financial Awareness and Consumer Training (FACT) supports young graduates and postgraduates who are making important financial decisions earlier in life. Credit cards, education loans and other commitments can have lasting consequences when not managed carefully."
+      ],
+      "minHeight": 223
+    },
+    {
+      "title": "Why it matters",
+      "body": [
+        "As young adults prepare for work and greater financial responsibility, it is important to set financial goals, recognise potential pitfalls and know where to seek assistance. Understanding consumer rights and responsibilities supports more informed decisions."
+      ],
+      "minHeight": 223
+    },
+    {
+      "title": "Who it supports",
+      "body": [
+        "FACT is designed for college and university students, particularly graduates and postgraduates preparing for independent financial responsibilities. Its goal is to help build a financially aware and responsible generation."
+      ],
+      "minHeight": 223
+    },
+    {
+      "title": "Contact NCFE",
+      "body": [
+        "Email: fe_programs@ncfe.org.in",
+        "Phone: +91-022-68265115"
+      ],
+      "minHeight": 135
+    }
+  ],
+  "nflat": [
+    {
+      "title": "About NFLAT",
+      "body": [
+        "Financial literacy is a core life skill involving the knowledge, behaviour and attitude needed for responsible money management. In 2005, the OECD recommended that financial education begin early and be taught in schools. NCFE conducts the National Financial Literacy Assessment Test for students in Classes VI to XII to encourage basic financial skills. NFLAT was launched in 2013–14 and is described as one of the world's largest free annual financial literacy tests for school students."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Why NFLAT?",
+      "body": [
+        "Financial literacy can help students make informed decisions about saving, spending, investing and borrowing. Understanding financial scams also helps them recognise risks and protect themselves. An assessment encourages students to take time to learn financial concepts and apply them to everyday decisions. NFLAT draws on banking, securities markets, insurance and pensions, and aims to encourage participating students to share their knowledge with family, friends and classmates."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Rewards and Recognition",
+      "body": [
+        "Each participating student is awarded an e-certificate based on performance. The three certificate categories are: Participation, for all participating students; Merit, for scores above 50% of total marks; and Outstanding, for scores above 85%. The reference programme also describes e-gift cards for winners at national and zonal levels. School coordinators may receive a certificate of appreciation."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Important Dates · 2024–25",
+      "body": [
+        "NFLAT 2024–25 schedule from the original app screenshots:",
+        "School registration: 02 December 2024 to 28 May 2025.",
+        "Student registration: 02 December 2024 to 29 May 2025.",
+        "Examination: 01 January 2025 to 31 May 2025.",
+        "These are historical dates, not an announcement that registration is currently open."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Test Categories",
+      "body": [
+        "The online computer-based assessment is organised into three groups:",
+        "NFLAT Junior: Classes 6–8.",
+        "NFLAT Intermediate: Classes 9–10.",
+        "NFLAT Senior: Classes 11–12.",
+        "The original app lists English as the assessment language for all three categories."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Information for Schools",
+      "body": [
+        "The original 2024–25 announcement says participation is limited and organised on a first-come, first-served basis. The online test is computer-based and available Monday to Friday, excluding holidays, from 10:00 am to 5:00 pm. Schools with computer labs and internet connectivity can conduct the test on their premises. Students may also participate from home when a PC or laptop and suitable connection are available. These instructions refer to the historical 2024–25 cycle."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Test Syllabus",
+      "body": [
+        "All three NFLAT categories use the same topic areas, with the degree of difficulty varying by class:",
+        "1. Money Matters: Income, Expenditure and Budgeting.",
+        "2. Banking: Deposits, Credit and Payments.",
+        "3. Insurance: Risk and Reward.",
+        "4. Investment: Stocks, Bonds and Mutual Funds.",
+        "5. Pension: Retirement Planning.",
+        "6. Financial Inclusion: Government Schemes.",
+        "7. Taxation: Income Tax and GST.",
+        "8. Consumer Protection: Scams, Frauds and the Role of Regulators."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "How to Register and Enrol",
+      "body": [
+        "Students cannot register directly. They must approach their school. For the referenced test, registration is intended for schools wishing to conduct a computer-based online test.",
+        "1. School Registration: The school registers and receives a User ID and password.",
+        "2. Student Registration: The school uses those credentials to upload details of students who wish to participate.",
+        "3. Take the Test: The school ensures enrolled students attend at the assigned date and time using their credentials.",
+        "The original screenshot states that the 2024–25 registrations are closed. Queries: 022-68265123/124 or nflat@ncfe.org.in."
+      ],
+      "minHeight": 0
+    },
+    {
+      "title": "Reference Study Materials",
+      "body": [
+        "Study resources listed in the original NFLAT page:",
+        "• Pocket Money Workbook: English and Hindi.",
+        "• Financial Education for School Children: English and Hindi.",
+        "• Introduction to Retirement Planning by PFRDA: English.",
+        "• Personal Finance for School Students by NCERT: English.",
+        "• Basics of Banking by RBI: English.",
+        "• Introduction to Insurance by IRDAI: English.",
+        "• Basics of Goods and Services Tax by CBIC: English.",
+        "• Capacity Building for Financial Literacy Programmes by RBI: English.",
+        "NCFE also recommends its Financial Education Video Series and other materials at \n                  \n                    https://ncfe.org.in/\n                  \n                  ."
+      ],
+      "minHeight": 0
+    }
+  ]
+}

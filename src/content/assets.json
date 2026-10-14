@@ -1,4 +1,25 @@
 {
+  "onboarding-dark": {
+    "imgLeadingIcon":"assets/onboarding-dark/c0850.svg",
+    "imgTrailingIcon":"assets/onboarding-dark/903f9.svg",
+    "imgTrailingIcon1":"assets/onboarding-dark/313ab.svg",
+    "imgIcon":"assets/onboarding-dark/3458d.svg",
+    "imgCellularConnection":"assets/onboarding-dark/3ef4d.svg",
+    "imgWifi":"assets/onboarding-dark/ae4b2.svg",
+    "imgFrame":"assets/onboarding-dark/59aa1.svg"
+  },
+  "impact":{"chevron":"assets/menu/0459a.svg"},
+  "menu": {
+    "identity":"assets/menu/21071.png",
+    "about":"assets/menu/9f69a.svg",
+    "impact":"assets/menu/0ddf7.svg",
+    "messages":"assets/menu/78206.svg",
+    "language":"assets/menu/73d89.svg",
+    "mode":"assets/menu/48dd0.svg",
+    "help":"assets/menu/5c724.svg",
+    "privacy":"assets/menu/dc35b.svg",
+    "dropdown":"assets/menu/71834.svg"
+  },
   "111-7492": {
     "imgImage23": "assets/111-7492/1b23b.png",
     "imgInfo": "assets/111-7492/deef2.svg",
@@ -194,6 +215,8 @@
     "imgMaterialSearchBlack22Px": "assets/33-5842/5534b.svg"
   },
   "21-5175": {
+    "imgNflatOriginalBannerEnhanced1": "assets/21-5175/2fd3d.png",
+    "imgDropdownChevron": "assets/21-5175/c976d.svg",
     "imgHome": "assets/21-5175/1f37e.svg",
     "imgImage23": "assets/21-5175/1b23b.png",
     "imgNcfeNflatHero1": "assets/21-5175/33357.png",
