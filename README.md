@@ -1,6 +1,6 @@
 # NCFE-redesign usability prototype
 
-Current fidelity/privacy audit: [audit report](docs/fidelity-audit.md). English, Hindi and Odia are enabled using the preserved translation resources; see the [language and guided-tour update](docs/language-tour-update.md) for tested behavior and remaining resource gaps. A transient guided tour is offered after first language confirmation, with no onboarding history stored. All six programme forms use source-specific fields and confirmation overlays. Forms, search, chat and feedback do not persist or transmit user input; Firebase initialization is disabled. The device viewport is 407 × 884, with a clean wrapper and contextual warnings. The older implementation notes below describe the previous version and are superseded by the audit report.
+Current fidelity/privacy audit: [audit report](docs/fidelity-audit.md). English, Hindi and Odia are enabled using the preserved translation resources; see the [language and guided-tour update](docs/language-tour-update.md) for tested behavior and remaining resource gaps. A transient guided tour is offered after first language confirmation, with no onboarding history stored. All six programme forms use source-specific fields and confirmation overlays. Registration, search and chat content remain in memory. The separate Firebase data collection configuration is documented in the [collection setup](docs/firebase-data-collection.md). The device viewport is 407 × 884, with a clean wrapper and contextual warnings. The older implementation notes below are superseded by the audit report.
 
 Independent academic UX redesign. **This is not an official NCFE application.**
 
@@ -27,22 +27,13 @@ Open the URL printed by Vite. Desktop opens the cream/blue popup with a phone fr
 - Frame 224 feedback form: original stars, cream background, yellow border and close icon; category, language, optional comment, rating and submit.
 - Four guided tasks with independent/facilitated mode, outcomes, difficulty, comments and skips. Tasks are participant-reported, not automatically scored.
 
-## Firebase is optional
+## Firebase collection
 
-All journeys work with `VITE_RESEARCH_ENABLED=false`. Feedback and guided-task submissions then explicitly say that nothing was saved. No Firebase account or live database connection is required to explore the prototype.
+When enabled, the production build records aggregate daily page-view totals and saves feedback only after the user submits it. Registration details, search terms, chat text, and study-task responses are not sent. Anonymous Firebase Authentication protects writes; its browser-linked ID is not copied into the traffic or feedback records. No analytics provider is used. See [collection setup](docs/firebase-data-collection.md) and [Firebase security](docs/firebase-security.md).
 
-When enabled, only consented usability-test records and feedback go to Firebase. Registration details and chat messages are never uploaded. Analytics is not initialized. Visits do not count as completed tests. Browser identities are anonymous sessions, not verified unique people.
+Keep the web-app configuration in ignored `.env.local` and GitHub repository secrets. `VITE_` values are visible in the deployed browser code; Firebase web keys are public identifiers, not private database credentials. Never add Admin SDK service-account keys.
 
-Keep the API key and web-app configuration in ignored `.env.local` and GitHub repository secrets. `VITE_` values are visible in deployed browser code; Firebase web keys are public identifiers, not private database credentials. Never add Admin SDK service-account keys. See [security setup](docs/firebase-security.md).
-
-Live collection remains disabled until Firestore and Anonymous Authentication are available, rules are deployed, 90-day expiry is configured and privacy arrangements are verified. A study-contact placeholder allows the demonstration to work without inventing a contact. Replace it before inviting participants to share real study responses.
-
-```sh
-# After Firestore has been created in production mode:
-npx firebase deploy --only firestore:rules --project ncfe-redesign
-```
-
-Anonymous ownership rules deny access to others' responses and public queries, validate allowed fields, require all four task reports for a completed test and allow same-browser withdrawal. Researcher access uses IAM in Firebase, not a public frontend dashboard. Configure TTL on `expiresAt` for the `tests` and `feedback` collection groups; check billing requirements and deletion delay. Treat 90 days as the retention deadline and operate a daily researcher deletion check to cover TTL delays.
+The collection flag defaults off. It will be enabled in the Pages build only after the Firestore database is created, the rules are deployed, and Anonymous Authentication is ready. The separate study-task workflow remains disabled.
 
 ## Architecture
 

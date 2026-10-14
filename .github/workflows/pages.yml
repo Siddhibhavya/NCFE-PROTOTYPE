@@ -38,6 +38,7 @@ jobs:
           VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_RESEARCH_ENABLED: ${{ secrets.VITE_RESEARCH_ENABLED || 'false' }}
+          VITE_PROTOTYPE_DATA_ENABLED: ${{ secrets.VITE_PROTOTYPE_DATA_ENABLED || 'false' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -14,6 +14,7 @@ import { GuidedTour } from './components/GuidedTour';
 import s from './styles/App.module.css';
 import { About } from './features/About';
 import { Impact } from './features/Impact';
+import { recordPageView } from './services/prototypeData';
 function Shell() {
     const t = useTranslation();
     const app = useApp();
@@ -22,11 +23,17 @@ function Shell() {
     const [menu, setMenu] = useState(false);
     const [feedback, setFeedback] = useState(false);
     const main = useRef<HTMLElement>(null);
+    const lastTrackedLocation = useRef('');
     const scroll = useRef<Record<string, number>>({});
     const formRoute=location.pathname.endsWith('/register')||location.pathname==='/account/login';
     const activeTab=formRoute?'/learn':['/about','/impact'].includes(location.pathname)?'/initiatives':location.pathname;
     const onboarding = location.pathname === '/onboarding';
     useEffect(()=>{app.setWarning('');},[location.pathname, app.setWarning]);
+    useEffect(() => {
+        if (lastTrackedLocation.current === location.key) return;
+        lastTrackedLocation.current = location.key;
+        void recordPageView().catch(() => undefined);
+    }, [location.key]);
     useEffect(()=>{if(window.parent!==window)window.parent.postMessage({type:'ncfe-warning',message:app.warning},window.location.origin);},[app.warning]);
     useEffect(() => { document.documentElement.lang = app.language; }, [app.language]);
     useEffect(() => { const el = main.current; if (!el)

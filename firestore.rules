@@ -59,6 +59,32 @@ service cloud.firestore {
         && request.resource.data.comment.size() <= 2000 && request.resource.data.createdAt == request.time
         && expiry(request.resource.data.expiresAt);
     }
+    match /prototypeTraffic/{day} {
+      allow create: if request.auth != null
+        && day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.keys().hasAll(['count','updatedAt'])
+        && request.resource.data.keys().hasOnly(['count','updatedAt'])
+        && request.resource.data.count == 1
+        && request.resource.data.updatedAt == request.time;
+      allow update: if request.auth != null
+        && day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.keys().hasAll(['count','updatedAt'])
+        && request.resource.data.keys().hasOnly(['count','updatedAt'])
+        && request.resource.data.count == resource.data.count + 1
+        && request.resource.data.updatedAt == request.time;
+      allow read, delete: if false;
+    }
+    match /prototypeFeedback/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasAll(['rating','category','comment','submittedAt'])
+        && request.resource.data.keys().hasOnly(['rating','category','comment','submittedAt'])
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && request.resource.data.category in ['In general','Onboarding','Home','Learn','FL initiatives','FinDisha','Help centre']
+        && request.resource.data.comment is string && request.resource.data.comment.size() <= 2000
+        && request.resource.data.submittedAt == request.time;
+      allow read, update, delete: if false;
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }
