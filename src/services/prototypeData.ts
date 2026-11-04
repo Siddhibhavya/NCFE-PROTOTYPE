@@ -45,17 +45,32 @@ export async function recordPageView() {
   }, { merge: true });
 }
 
+const feedbackForm = 'https://docs.google.com/forms/d/e/1FAIpQLScU2td8ILr_xZh8n-LajaQCRY5VvsZQnKfu-ysHlxHMsBSYGA/formResponse';
+
 export async function savePrototypeFeedback(feedback: { rating: number; category: string; comment: string }) {
-  if (!prototypeDataEnabled) throw new Error('Feedback storage is not configured.');
   if (!Number.isInteger(feedback.rating) || feedback.rating < 1 || feedback.rating > 5
     || !feedbackCategories.has(feedback.category) || feedback.comment.length > 2000) {
     throw new Error('Feedback is invalid.');
   }
-  await authenticate();
-  await setDoc(doc(collection(database(), 'prototypeFeedback')), {
-    rating: feedback.rating,
-    category: feedback.category,
-    comment: feedback.comment,
-    submittedAt: serverTimestamp(),
+  await fetch(feedbackForm, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: new URLSearchParams({
+      'entry.570884937': String(feedback.rating),
+      'entry.722624965': feedback.category,
+      'entry.1005294063': feedback.comment,
+    }),
   });
+  if (!prototypeDataEnabled) return;
+  try {
+    await authenticate();
+    await setDoc(doc(collection(database(), 'prototypeFeedback')), {
+      rating: feedback.rating,
+      category: feedback.category,
+      comment: feedback.comment,
+      submittedAt: serverTimestamp(),
+    });
+  } catch {
+    // The Google Form copy above is the record researchers read.
+  }
 }
